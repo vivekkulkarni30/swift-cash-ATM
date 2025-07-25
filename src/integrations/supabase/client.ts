@@ -1,11 +1,17 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-const SUPABASE_URL = "https://gcgrjydxgwosohmxjvfj.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZ3JqeWR4Z3dvc29obXhqdmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyMDUwNjksImV4cCI6MjA2ODc4MTA2OX0.ZkrsF4pcvDSjQE5uyyKvQLFJPiFObAwlDUVMNUdgTkc";
+// 1. Read the URL and Key from secure environment variables
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+// 2. Check if the variables are loaded correctly
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error("Supabase URL or Key is missing from .env.local file");
+}
 
-export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+// 3. Create the client using the secure variables
+export const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
   auth: {
     storage: localStorage,
     persistSession: true,
