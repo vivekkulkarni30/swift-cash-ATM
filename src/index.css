@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ATM Simulation Design System */
+
+@layer base {
+  :root {
+    /* ATM Brand Colors */
+    --atm-primary: 210 100% 15%;
+    --atm-primary-light: 210 80% 25%;
+    --atm-primary-dark: 210 100% 10%;
+    
+    /* Interface Colors */
+    --atm-screen: 220 15% 8%;
+    --atm-screen-text: 120 100% 75%;
+    --atm-button: 210 15% 25%;
+    --atm-button-hover: 210 20% 35%;
+    --atm-success: 120 60% 50%;
+    --atm-error: 0 70% 55%;
+    --atm-warning: 45 90% 60%;
+    
+    /* Neutral Colors */
+    --atm-white: 0 0% 100%;
+    --atm-black: 0 0% 0%;
+    --atm-gray-100: 220 15% 95%;
+    --atm-gray-200: 220 15% 85%;
+    --atm-gray-300: 220 15% 75%;
+    --atm-gray-500: 220 15% 50%;
+    --atm-gray-700: 220 15% 30%;
+    --atm-gray-800: 220 15% 20%;
+    --atm-gray-900: 220 15% 10%;
+
+    /* Gradients */
+    --gradient-atm: linear-gradient(135deg, hsl(var(--atm-primary)), hsl(var(--atm-primary-light)));
+    --gradient-screen: linear-gradient(180deg, hsl(var(--atm-screen)), hsl(var(--atm-gray-900)));
+    
+    /* Shadows */
+    --shadow-atm: 0 10px 30px -5px hsl(var(--atm-primary) / 0.3);
+    --shadow-button: 0 4px 12px hsl(var(--atm-button) / 0.4);
+    --shadow-screen: inset 0 2px 8px hsl(var(--atm-black) / 0.5);
+    
+    /* Animation */
+    --transition-atm: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Standard shadcn mappings for compatibility */
+    --background: var(--atm-gray-100);
+    --foreground: var(--atm-gray-900);
+    --card: var(--atm-white);
+    --card-foreground: var(--atm-gray-900);
+    --popover: var(--atm-white);
+    --popover-foreground: var(--atm-gray-900);
+    --primary: var(--atm-primary);
+    --primary-foreground: var(--atm-white);
+    --secondary: var(--atm-gray-200);
+    --secondary-foreground: var(--atm-gray-900);
+    --muted: var(--atm-gray-200);
+    --muted-foreground: var(--atm-gray-500);
+    --accent: var(--atm-primary-light);
+    --accent-foreground: var(--atm-white);
+    --destructive: var(--atm-error);
+    --destructive-foreground: var(--atm-white);
+    --border: var(--atm-gray-300);
+    --input: var(--atm-white);
+    --ring: var(--atm-primary);
+    --radius: 8px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
