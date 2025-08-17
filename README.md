@@ -11,7 +11,7 @@ If you want to get this running on your own machine, just follow these steps.
 
 Clone the repo:
 
-git clone https://github.com/SagarSh2004/swift-cash-swing-atm.git
+git clone https://github.com/vivekkulkarni30/swift-cash-ATM.git
 
 Go into the folder:
 
